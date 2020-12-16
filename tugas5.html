@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tugas Prak PAW</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .row.content {
+            height: 1500px
+        }
+
+        .sidenav {
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <h4>Tugas Praktikum PAW - 1187050019</h4>
+                <ul class="nav nav-pills nav-stacked siderbar1">
+                    <li class="active"><a onclick="changePage1()">Dosen</a></li>
+                    <li><a onclick="changePage2()">Prodi</a></li>
+                    <li><a onclick="changePage3()">Matakuliah</a></li>
+                    <li><a onclick="changePage4()">Mengajar</a></li>
+                    <li><a onclick="changePage5()">Nilai Kehadiran Mengajar</a></li>
+                </ul><br>
+            </div>
+
+            <div class="col-sm-9" id="dosen">
+                <h2 class>Tambah Dosen</h2>
+                <form class="form-horizontal" action="/action_page.php">
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="dosen">NIDN</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="text" placeholder="Masukkan NIDN Dosen"
+                                name="nidn">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="dosen">Nama</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="text" placeholder="Masukkan Nama Dosen"
+                                name="nama">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="comment">Alamat:</label>
+                        <div class="col-sm-10"><textarea class="form-control" placeholder="Masukkan Alamat Dosen"
+                                rows="5" id="comment"></textarea></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="col-sm-9 " id="prodi" style="display: none">
+                <h2 class>Tambah Prodi</h2>
+                <form class="form-horizontal" action="/action_page.php">
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="prodi">Kode</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="text" placeholder="Masukkan Kode prodi"
+                                name="Kode">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="sel1">Jurusan:</label>
+                        <div class="col-sm-10">
+                                <select class="form-control" id="sel1">
+                                        <option>Teknik Informatika</option>
+                                        <option>Ilmu Komputer</option>
+                                        <option>Sistem Informasi</option>
+                                    </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-9 " id="matakuliah" style="display: none">
+                <h2 class>Tambah Mata Kuliah</h2>
+                <form class="form-horizontal" action="/action_page.php">
+
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="matakuliah">Kode</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="text" placeholder="Masukkan Kode matakuliah"
+                                name="Kode">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="matakuliah">Nama</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="text" placeholder="Masukkan Nama matakuliah"
+                                name="Kode">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                            <label class="control-label col-sm-2" for="sel1">SKS:</label>
+                            <div class="col-sm-10">
+                                    <select class="form-control" id="sel1">
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>6</option>
+                                        </select>
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+                            <label class="control-label col-sm-2" for="sel1">Semester:</label>
+                            <div class="col-sm-10">
+                                    <select class="form-control" id="sel1">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                        </select>
+                            </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                            <label class="control-label col-sm-2" for="sel1">Jenis Mata Kuliah:</label>
+                            <div class="col-sm-10">
+                                    <div class="radio">
+                                            <label><input type="radio" name="optradio" checked>Teori</label>
+                                          </div>
+                                          <div class="radio">
+                                            <label><input type="radio" name="optradio">Praktek</label>
+                                          </div>
+                                          <div class="radio">
+                                            <label><input type="radio" name="optradio" >Teori/Praktek</label>
+                                          </div>
+                            </div>
+                    </div>
+
+                    
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-9 " id="mengajar" style="display: none">
+                <h2 class>Tambah Mengajar</h2>
+                <form class="form-horizontal" action="/action_page.php">
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="dosen">NIDN</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="text" placeholder="Masukkan NIDN Dosen"
+                                name="nidn">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="mengajar">Kode Mata Kuliah</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="text" placeholder="Masukkan Kode Mata Kuliah"
+                                name="Kode Mata Kuliah">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-9 " id="nilaikehadiran" style="display: none">
+                <h2 class>Tambah Nilai Kehadiran Mengajar</h2>
+                <form class="form-horizontal" action="/action_page.php">
+
+                    
+                    <div class="form-group">
+                            <label class="control-label col-sm-2" for="dosen">NIM</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="text" placeholder="Masukkan NIM Mahasiswa"
+                                    name="NIM">
+                            </div>
+                        </div>
+    
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="Nilai">Kode MK</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="text" placeholder="Masukkan Kode MK"
+                                name="Kode MK">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                            <label class="control-label col-sm-2" for="dosen">Index</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="text" placeholder="Masukkan Index Nilai"
+                                    name="Index">
+                            </div>
+                        </div>
+    
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid">
+        <p>Footer Text</p>
+    </footer>
+
+</body>
+
+<script>
+
+    function changePage1() {
+        var dosen = document.getElementById("dosen");
+        var prodi = document.getElementById("prodi");
+        var matakuliah = document.getElementById("matakuliah");
+        var mengajar = document.getElementById("mengajar");
+        var nilaikehadiran = document.getElementById("nilaikehadiran");
+
+        dosen.style.display = "block";
+        prodi.style.display = "none";
+        matakuliah.style.display = "none";
+        mengajar.style.display = "none";
+        nilaikehadiran.style.display = "none";
+    }
+    function changePage2() {
+        var dosen = document.getElementById("dosen");
+        var prodi = document.getElementById("prodi");
+        var matakuliah = document.getElementById("matakuliah");
+        var mengajar = document.getElementById("mengajar");
+        var nilaikehadiran = document.getElementById("nilaikehadiran");
+
+        dosen.style.display = "none";
+        prodi.style.display = "block";
+        matakuliah.style.display = "none";
+        mengajar.style.display = "none";
+        nilaikehadiran.style.display = "none";
+    }
+
+    function changePage3() {
+        var dosen = document.getElementById("dosen");
+        var prodi = document.getElementById("prodi");
+        var matakuliah = document.getElementById("matakuliah");
+        var mengajar = document.getElementById("mengajar");
+        var nilaikehadiran = document.getElementById("nilaikehadiran");
+
+        dosen.style.display = "none";
+        prodi.style.display = "none";
+        matakuliah.style.display = "block";
+        mengajar.style.display = "none";
+        nilaikehadiran.style.display = "none";
+    }
+
+    function changePage4() {
+        var dosen = document.getElementById("dosen");
+        var prodi = document.getElementById("prodi");
+        var matakuliah = document.getElementById("matakuliah");
+        var mengajar = document.getElementById("mengajar");
+        var nilaikehadiran = document.getElementById("nilaikehadiran");
+
+        dosen.style.display = "none";
+        prodi.style.display = "none";
+        matakuliah.style.display = "none";
+        mengajar.style.display = "block";
+        nilaikehadiran.style.display = "none";
+    }
+
+    function changePage5() {
+        var dosen = document.getElementById("dosen");
+        var prodi = document.getElementById("prodi");
+        var matakuliah = document.getElementById("matakuliah");
+        var mengajar = document.getElementById("mengajar");
+        var nilaikehadiran = document.getElementById("nilaikehadiran");
+
+        dosen.style.display = "none";
+        prodi.style.display = "none";
+        matakuliah.style.display = "none";
+        mengajar.style.display = "none";
+        nilaikehadiran.style.display = "block";
+    }
+
+    $('.siderbar1 li').click(function(){
+    $('.siderbar1 li').removeClass('active');
+    $(this).addClass('active');
+})
+
+</script>
+
+</html>

@@ -1,0 +1,51 @@
+* {
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    
+    margin: 0;
+   padding: 0;
+ }.form-inline{
+    position: absolute;
+    left: 500px;
+    
+}
+.home{
+    position: absolute;
+    top: 55px;
+    left: 500px;
+    color: black;
+}.subs{
+    position: absolute;
+    top: 55px;
+    right: 19px;
+}
+.card {
+    border-radius: 5px;
+    padding: 20px;
+   margin-top: 20px;
+}
+#featured {
+    float: left;
+    width: 77%;
+    left: 15px;
+}
+#rekomen{
+    position: absolute;
+    top: 70px;
+    left: 640px;
+}
+#ads{
+    float: right;
+    right: 15px;
+    width: 251px;
+    height: 256px;
+}
+#more{
+    float: left;
+    width: 98%;
+    left: 15px;
+}

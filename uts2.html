@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Anggotaa</title>
+
+    <script>
+
+        function showform() {
+            var jumlah = document.getElementById("jumlah").value;
+
+            var i;
+
+            for (i = 1; i<=jumlah; i++) {
+                var node = document.createElement("label");     
+                var textnode = document.createTextNode("Anggota ke-");   
+                node.appendChild(textnode);                           
+                document.getElementById("inputnama").appendChild(node);
+
+                var node = document.createElement("input").setAttribute("id", "anggotake"+i, "type", "text");     
+                node.appendChild(node);                           
+                document.getElementById("inputnama").appendChild(node);
+                
+                
+            }
+
+            var node = document.createElement("button").setAttribute("onClick", "showList()");     
+                var textnode = document.createTextNode("Submit");   
+                node.appendChild(textnode);                           
+                document.getElementById("inputnama").appendChild(node);
+        }
+
+        function showList() {
+            var jumlah = document.getElementById("jumlah").value;
+
+            var i;
+
+            for(i=1; i<jumlah; i++) {
+                namaanggota = document.getElementById("anggotake"+i);
+                document.getElementById("listanggota").appendChild("li").createTextNode(namaanggota);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <label for="fname">Berapa jumlah anggota kelompok kamu?</label>
+        <input type="number" id="jumlah" name="fname"><br><br>
+        <button onclick="showform()">Click me</button>
+    </form>
+
+    <form action="" id="inputnama">
+    </form>
+
+    <ul id="listanggota">
+
+    </ul>
+
+
+
+</body>
+
+
+
+</html>

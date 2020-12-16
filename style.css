@@ -1,0 +1,23 @@
+.aspect-16to9 {
+  height: auto;
+  width: 100%;
+}
+
+.p-16to9 {
+  position: relative;
+  padding-bottom: 60%;
+  overflow: hidden;
+}
+
+.card-body-content {
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+  left: 1rem;
+  overflow: hidden;
+}
+
+.conta {
+  color: black;
+}
